@@ -28,6 +28,10 @@ public class Prenotazione {
         this.utente = utente;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public LocalDate getDataPrenotazione() {
         return dataPrenotazione;
     }

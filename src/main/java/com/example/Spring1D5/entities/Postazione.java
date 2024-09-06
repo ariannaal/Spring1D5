@@ -7,6 +7,7 @@ import java.util.UUID;
 
 @Table(name = "postazione")
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Postazione {
 
     @Id

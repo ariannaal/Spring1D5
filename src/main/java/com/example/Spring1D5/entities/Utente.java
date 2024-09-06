@@ -18,10 +18,9 @@ public class Utente {
     @OneToMany(mappedBy = "utente")
     private List<Prenotazione> prenotazioni;
 
-    public Utente(String nomeCompleto, String email, List<Prenotazione> prenotazioni) {
+    public Utente(String nomeCompleto, String email) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
-        this.prenotazioni = prenotazioni;
     }
 
     public String getNomeCompleto() {
@@ -40,13 +39,7 @@ public class Utente {
         this.email = email;
     }
 
-    public List<Prenotazione> getPrenotazioni() {
-        return prenotazioni;
-    }
 
-    public void setPrenotazioni(List<Prenotazione> prenotazioni) {
-        this.prenotazioni = prenotazioni;
-    }
 
     @Override
     public String toString() {
