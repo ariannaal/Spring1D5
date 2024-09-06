@@ -14,7 +14,6 @@ public class Postazione {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
     private UUID codiceUnivoco;
 
     private String descrizione;
@@ -33,6 +32,9 @@ public class Postazione {
         this.tipoPostazione = tipoPostazione;
         this.maxOccupanti = maxOccupanti;
         this.edificio = edificio;
+    }
+
+    public Postazione() {
     }
 
     public int getId() {

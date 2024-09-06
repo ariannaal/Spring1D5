@@ -27,6 +27,9 @@ public class Edificio {
         this.citta = citta;
     }
 
+    public Edificio() {
+    }
+
 
     public String getNome() {
         return nome;

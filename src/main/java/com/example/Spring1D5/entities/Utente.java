@@ -23,6 +23,9 @@ public class Utente {
         this.email = email;
     }
 
+    public Utente() {
+    }
+
     public String getNomeCompleto() {
         return nomeCompleto;
     }

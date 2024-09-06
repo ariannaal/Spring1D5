@@ -78,46 +78,6 @@ public class MyRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 
-//        Faker faker = new Faker(Locale.ITALY);
-//
-//        Edificio edificio1 = new Edificio(faker.company().name(), faker.address().streetAddress(), "Milano");
-//        Edificio edificio2 = new Edificio(faker.company().name(), faker.address().streetAddress(), "Milano");
-//        Edificio edificio3 = new Edificio(faker.company().name(), faker.address().streetAddress(), "Milano");
-//
-//        Postazione postazione1 = new Postazione("Postazione privata con vista", TipoPostazione.PRIVATO, 1, edificio1);
-//        Postazione postazione2 = new Postazione("Postazione open space", TipoPostazione.OPENSPACE, 5, edificio2);
-//        Postazione postazione3 = new Postazione("Sala riunioni grande", TipoPostazione.SALA_RIUNIONI, 10, edificio3);
-//
-//        Utente utente1 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
-//        Utente utente2 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
-//        Utente utente3 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
-//        Utente utente4 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
-//        Utente utente5 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
-//
-//        List<Utente> listaUtenti = new ArrayList<>();
-//        listaUtenti.add(utente1);
-//        listaUtenti.add(utente2);
-//        listaUtenti.add(utente3);
-//        listaUtenti.add(utente4);
-//        listaUtenti.add(utente5);
-//
-//        Prenotazione prenotazione1 = new Prenotazione(LocalDate.now(), postazione1, utente1);
-//        Prenotazione prenotazione2 = new Prenotazione(LocalDate.now(), postazione1, utente2);
-//        Prenotazione prenotazione3 = new Prenotazione(LocalDate.now(), postazione2, utente1);
-//        Prenotazione prenotazione4 = new Prenotazione(LocalDate.now(), postazione3, utente2);
-//        Prenotazione prenotazione5 = new Prenotazione(LocalDate.now(), postazione1, utente3);
-//        Prenotazione prenotazione6 = new Prenotazione(LocalDate.now(), postazione1, utente5);
-//        Prenotazione prenotazione7 = new Prenotazione(LocalDate.now(), postazione1, utente4);
-//
-//        List<Prenotazione> listaPrenotazioni = new ArrayList<>();
-//        listaPrenotazioni.add(prenotazione1);
-//        listaPrenotazioni.add(prenotazione2);
-//        listaPrenotazioni.add(prenotazione3);
-//        listaPrenotazioni.add(prenotazione4);
-//        listaPrenotazioni.add(prenotazione5);
-//        listaPrenotazioni.add(prenotazione6);
-//        listaPrenotazioni.add(prenotazione7);
-
         List<Utente> listaUtenti = new ArrayList<>();
         listaUtenti.add(utente1);
         listaUtenti.add(utente2);
@@ -180,26 +140,15 @@ public class MyRunner implements CommandLineRunner {
             System.out.println(ex.getMessage());
         }
 
-        // salvataggio utenti
-//        try {
-//            for (int i = 0; i < listaUtenti.size(); i++) {
-//                utenteService.saveUtente(listaUtenti.get(i));
-//            }
-//        } catch (ValidException ex) {
-//            System.out.println(ex.getMessage());
-//        }
-//
-//        System.out.println("Numero di utenti nel database:");
-//        System.out.println(utenteService.count());
 
-        //salvataggio postazioni
-//        try {
-//            .saveUser(newUser);
-//        } catch (ValidationException ex) {
-//            System.out.println(ex.getMessage());
-//        }
+        //prenotazione
+        try {
+            prenotazioniService.prenota(postazione1, utente1, LocalDate.now());
+            System.out.println("Prenotazione effettuata con successo.");
+        } catch (IllegalStateException e) {
+            System.err.println(e.getMessage());
+        }
 
-        // salvataggio prenotazioni
 
 
     }

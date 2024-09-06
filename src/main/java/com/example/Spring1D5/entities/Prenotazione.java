@@ -28,6 +28,9 @@ public class Prenotazione {
         this.utente = utente;
     }
 
+    public Prenotazione() {
+    }
+
     public int getId() {
         return id;
     }

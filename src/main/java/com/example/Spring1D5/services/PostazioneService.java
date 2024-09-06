@@ -21,12 +21,16 @@ public class PostazioneService {
         postazioneRepository.save(nuovaPostazione);
 
         if (nuovaPostazione.getCodiceUnivoco() == null) {
-            throw new IllegalArgumentException("Il codice Unico non puo' essere null");
+            throw new IllegalArgumentException("Il codice Univoco non puo' essere null");
         }
 
 
 
-        System.out.println("Nuova postazione " + nuovaPostazione.getId() + " salvato con successo!");
+
+
+
+
+        System.out.println("Nuova postazione con Codice Univoco " + nuovaPostazione.getCodiceUnivoco() + " salvata con successo!");
     }
 
 
