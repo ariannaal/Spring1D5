@@ -17,7 +17,9 @@ public class UtenteService {
     public void saveUtente(Utente newUtente){
 
         // controllo se esiste già un utente con questa email
-        if(UtenteRepository.existsByEmail(newUtente.getEmail())) throw new ValidException("L'email " + newUtente.getEmail() + " è già in utilizzo!");
+        if (utenteRepository.existsByEmail(newUtente.getEmail())) {
+            throw new ValidException("L'email " + newUtente.getEmail() + " è già in utilizzo!");
+        }
 
         if(newUtente.getNomeCompleto().length() < 2) throw new ValidException("Nome troppo corto!");
 
@@ -25,6 +27,10 @@ public class UtenteService {
 
         System.out.println("Nuovo utente " + newUtente.getEmail() + " salvato con successo!");
     }
+
+//    public List<Utente> findAll(){
+//        return utenteRepository.find();
+//    }
 
     public List<Utente> findByNomeCompleto(String nomeCompleto) {
         return utenteRepository.findByNomeCompleto(nomeCompleto);

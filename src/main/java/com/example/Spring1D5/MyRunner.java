@@ -14,6 +14,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -44,8 +45,15 @@ public class MyRunner implements CommandLineRunner {
         Utente utente2 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
         Utente utente3 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
         Utente utente4 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
-        Utente utente5 = new Utente(faker.name().lastName(), faker.internet().emailAddress());
+        Utente utente5 = new Utente(faker.name().lastName(), "ausonio.orlando@gmail.com");
 
+
+        List<Utente> listaUtenti = new ArrayList<>();
+        listaUtenti.add(utente1);
+        listaUtenti.add(utente2);
+        listaUtenti.add(utente3);
+        listaUtenti.add(utente4);
+        listaUtenti.add(utente5);
 
         Prenotazione prenotazione1 = new Prenotazione(LocalDate.now(), postazione1, utente1);
         Prenotazione prenotazione2 = new Prenotazione(LocalDate.now(), postazione1, utente2);
@@ -56,11 +64,14 @@ public class MyRunner implements CommandLineRunner {
         Prenotazione prenotazione7 = new Prenotazione(LocalDate.now(), postazione1, utente4);
 
         try {
-
-            utenteService.saveUtente(utente1);
+            for (int i = 0; i < listaUtenti.size(); i++) {
+                utenteService.saveUtente(listaUtenti.get(i));
+            }
         } catch (ValidException ex) {
             System.out.println(ex.getMessage());
         }
+
+//        utenteService.findAll().forEach(System.out::println);
 
 
 //    usersService.findAll().forEach(System.out::println);

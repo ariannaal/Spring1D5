@@ -11,8 +11,8 @@ public interface UtenteRepository extends JpaRepository<Utente, Integer> {
 
     List<Utente> findByNomeCompleto(String nomeCompleto);
 
-    static boolean existsByEmail(String email) {
-        return false;
-    }
+    boolean existsByEmail(String email);
+
+//    List<Utente> find();
 
 }
