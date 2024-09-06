@@ -8,6 +8,8 @@ import com.example.Spring1D5.repositories.PostazioneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EdificioService {
 
@@ -23,6 +25,10 @@ public class EdificioService {
         edificioRepository.save(nuovoEdificio);
 
         System.out.println("Nuovo edificio " + nuovoEdificio.getNome() + " salvato con successo!");
+    }
+
+    public List<Edificio> findByCitta(String citta) {
+        return edificioRepository.findByCitta(citta);
     }
 
 }

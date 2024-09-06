@@ -2,6 +2,7 @@ package com.example.Spring1D5.services;
 
 import com.example.Spring1D5.entities.Postazione;
 import com.example.Spring1D5.entities.Utente;
+import com.example.Spring1D5.enums.TipoPostazione;
 import com.example.Spring1D5.exceptions.ValidException;
 import com.example.Spring1D5.repositories.PostazioneRepository;
 import com.example.Spring1D5.repositories.PrenotazioneRepository;
@@ -24,15 +25,12 @@ public class PostazioneService {
             throw new IllegalArgumentException("Il codice Univoco non puo' essere null");
         }
 
-
-
-
-
-
-
         System.out.println("Nuova postazione con Codice Univoco " + nuovaPostazione.getCodiceUnivoco() + " salvata con successo!");
     }
 
+    public List<Postazione> findByTipoPostazione(TipoPostazione tipoPostazione) {
+        return postazioneRepository.findByTipoPostazione(tipoPostazione);
+    }
 
 
 }

@@ -13,4 +13,6 @@ public interface EdificioRepository extends JpaRepository<Edificio, Integer> {
 
     boolean existsById(int id);
 
+    List<Edificio> findByCitta(String citta);
+
 }

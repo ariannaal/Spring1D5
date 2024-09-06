@@ -148,7 +148,21 @@ public class MyRunner implements CommandLineRunner {
             System.err.println("Errore nella prenotazione: " + e.getMessage());
         }
 
+        // ricerca per tipo di postazione
+        List<Postazione> tipoPostazioneRicerca = postazioneService.findByTipoPostazione(TipoPostazione.OPENSPACE);
+        System.out.println("Codici univoci delle postazioni di tipo OPEN SPACE:");
+        for (int i = 0; i < tipoPostazioneRicerca.size(); i++) {
+            Postazione postazione = tipoPostazioneRicerca.get(i);
+            System.out.println(postazione.getCodiceUnivoco());
+        }
 
+        // ricerca per citta
+        List<Edificio> edificiRicerca = edificioService.findByCitta("Roma");
+        System.out.println("Edifici a Roma:");
+        for (int i = 0; i < edificiRicerca.size(); i++) {
+            Edificio edificio = edificiRicerca.get(i);
+            System.out.println(edificio.getNome() + " con indirizzo " + edificio.getIndirizzo());
+        }
 
     }
 }

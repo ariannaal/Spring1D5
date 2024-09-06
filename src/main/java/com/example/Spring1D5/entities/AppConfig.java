@@ -14,17 +14,17 @@ public class AppConfig {
     // bean per gli edifici
     @Bean
     public Edificio edificio1() {
-        return new Edificio(faker.company().name(), faker.address().streetAddress(), "Milano");
+        return new Edificio(faker.company().name(), faker.address().streetAddress(), "Roma");
     }
 
     @Bean
     public Edificio edificio2() {
-        return new Edificio(faker.company().name(), faker.address().streetAddress(), "Milano");
+        return new Edificio(faker.company().name(), faker.address().streetAddress(), "Roma");
     }
 
     @Bean
     public Edificio edificio3() {
-        return new Edificio(faker.company().name(), faker.address().streetAddress(), "Milano");
+        return new Edificio(faker.company().name(), faker.address().streetAddress(), "Torino");
     }
 
     // bean per le postazioni
