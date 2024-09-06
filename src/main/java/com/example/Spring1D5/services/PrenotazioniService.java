@@ -40,7 +40,6 @@ public class PrenotazioniService {
         int meseRandom = random.nextInt(12);
         LocalDate dataRandom = LocalDate.of(2024, meseRandom, giornoRandom);
 
-        LocalDate dataP = LocalDate.of(2024,9,25);
         // verifica se l'utente ha già una prenotazione per la data
         List<Prenotazione> prenotazioniUtente = prenotazioneRepository.findByUtenteAndDataPrenotazione(utente, dataRandom);
         if (!prenotazioniUtente.isEmpty()) {

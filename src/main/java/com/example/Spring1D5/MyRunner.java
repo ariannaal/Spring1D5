@@ -140,13 +140,12 @@ public class MyRunner implements CommandLineRunner {
             System.out.println(ex.getMessage());
         }
 
-
-        //prenotazione
+        // x eseguire una prenotazione
         try {
             prenotazioniService.prenota(postazione1, utente1, LocalDate.now());
-            System.out.println("Prenotazione effettuata con successo.");
+            System.out.println("Prenotazione effettuata con successo per utente " + utente1.getNomeCompleto() + " e postazione " + postazione1.getCodiceUnivoco());
         } catch (IllegalStateException e) {
-            System.err.println(e.getMessage());
+            System.err.println("Errore nella prenotazione: " + e.getMessage());
         }
 
 
