@@ -1,17 +1,19 @@
 package com.example.Spring1D5.repositories;
 
+import com.example.Spring1D5.entities.Postazione;
 import com.example.Spring1D5.entities.Utente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
-public interface UtenteRepository extends JpaRepository<Utente, Integer> {
+public interface PostazioneRepository extends JpaRepository<Postazione, Integer> {
 
-    List<Utente> findByNomeCompleto(String nomeCompleto);
+    List<Postazione> findById(int id);
 
-    boolean existsByEmail(String email);
+    boolean existsById(int id);
 
 
 

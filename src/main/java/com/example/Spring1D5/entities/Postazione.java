@@ -14,7 +14,7 @@ public class Postazione {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, unique = true)
+
     private UUID codiceUnivoco;
 
     private String descrizione;
@@ -43,6 +43,10 @@ public class Postazione {
         return descrizione;
     }
 
+    public UUID getCodiceUnivoco() {
+        return codiceUnivoco;
+    }
+
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
@@ -69,6 +73,14 @@ public class Postazione {
 
     public void setEdificio(Edificio edificio) {
         this.edificio = edificio;
+    }
+
+    // se il codice univoco e' null ne crea uno prima di effettuare l'operazione
+    @PrePersist
+    protected void onCreate() {
+        if (codiceUnivoco == null) {
+            codiceUnivoco = UUID.randomUUID();
+        }
     }
 
     @Override

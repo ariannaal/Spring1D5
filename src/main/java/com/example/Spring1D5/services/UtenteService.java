@@ -28,12 +28,16 @@ public class UtenteService {
         System.out.println("Nuovo utente " + newUtente.getEmail() + " salvato con successo!");
     }
 
-//    public List<Utente> findAll(){
-//        return utenteRepository.find();
-//    }
+    public List<Utente> findAll(){
+        return utenteRepository.findAll();
+    }
 
     public List<Utente> findByNomeCompleto(String nomeCompleto) {
         return utenteRepository.findByNomeCompleto(nomeCompleto);
+    }
+
+    public long count(){
+        return utenteRepository.count();
     }
 
 }
