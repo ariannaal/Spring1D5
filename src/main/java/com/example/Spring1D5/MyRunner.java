@@ -164,6 +164,7 @@ public class MyRunner implements CommandLineRunner {
             System.out.println(edificio.getNome() + " con indirizzo " + edificio.getIndirizzo());
         }
 
+
     }
 }
 

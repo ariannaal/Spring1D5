@@ -20,9 +20,5 @@ public interface PostazioneRepository extends JpaRepository<Postazione, Integer>
 
     List<Postazione> findByTipoPostazione(TipoPostazione tipoPostazione);
 
-//    List<Prenotazione> findByUtenteIdAndData(Long utenteId, LocalDate data);
-//
-//    List<Prenotazione> findByPostazioneIdAndData(Long postazioneId, LocalDate data);
-
 
 }

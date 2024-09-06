@@ -31,7 +31,7 @@ public class PrenotazioniService {
         // verifico se la prenotazione e' disponibile
         List<Prenotazione> prenotazioniEsistenti = prenotazioneRepository.findByPostazioneAndDataPrenotazione(postazione, dataPrenotazione);
         if (!prenotazioniEsistenti.isEmpty()) {
-            System.out.println("La postazione non è disponibile per la data selezionata.");
+            System.out.println("La postazione non e' disponibile per la data selezionata.");
             return;
         }
 
@@ -43,19 +43,11 @@ public class PrenotazioniService {
         // verifica se l'utente ha già una prenotazione per la data
         List<Prenotazione> prenotazioniUtente = prenotazioneRepository.findByUtenteAndDataPrenotazione(utente, dataRandom);
         if (!prenotazioniUtente.isEmpty()) {
-            System.out.println("L'utente ha già una prenotazione per la data selezionata.");
+            System.out.println("L'utente ha gia' una prenotazione per la data selezionata.");
         }
 
-//        List<Prenotazione> prenotazioniPostazione = prenotazioneRepository.findByPostazioneIdAndData(postazione.getId(), dataRandom);
-//        if (!prenotazioniPostazione.isEmpty()) {
-//            throw new IllegalStateException("La postazione è già prenotata per questa data.");
-//        }
-
-        // salva la prenotazione
-        Prenotazione prenotazione = new Prenotazione(dataPrenotazione, postazione, utente);
-        prenotazioneRepository.save(prenotazione);
     }
 
-    }
+}
 
 
