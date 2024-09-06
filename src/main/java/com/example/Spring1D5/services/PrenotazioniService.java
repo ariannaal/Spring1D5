@@ -35,6 +35,12 @@ public class PrenotazioniService {
             return;
         }
 
+        if (dataPrenotazione.isBefore(LocalDate.now())) {
+            System.out.println("La data di prenotazione non puo' essere nel passato.");
+            return;
+        }
+
+
         Random random = new Random();
         int giornoRandom = random.nextInt(31);
         int meseRandom = random.nextInt(12);
