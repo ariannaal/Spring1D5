@@ -46,6 +46,11 @@ public class PrenotazioniService {
             System.out.println("L'utente ha già una prenotazione per la data selezionata.");
         }
 
+//        List<Prenotazione> prenotazioniPostazione = prenotazioneRepository.findByPostazioneIdAndData(postazione.getId(), dataRandom);
+//        if (!prenotazioniPostazione.isEmpty()) {
+//            throw new IllegalStateException("La postazione è già prenotata per questa data.");
+//        }
+
         // salva la prenotazione
         Prenotazione prenotazione = new Prenotazione(dataPrenotazione, postazione, utente);
         prenotazioneRepository.save(prenotazione);
